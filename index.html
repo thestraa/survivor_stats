@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quicksand:wght@300..700&display=swap"
       rel="stylesheet"
@@ -17,19 +17,19 @@
     <title>Survivor Srbija - Fan Page</title>
   </head>
   <body>
-    <div class="navbar">
-      <img
-      src="img/torch.gif"
-      alt="Baklja"
-      style="width: 100px; vertical-align: middle"
-    />
-      <a href="#">Početna</a>
-      <a href="#takmicari">Takmičari</a>
-      <a href="#statistika">Statistika</a>
-      <a href="#glasanje">Glasanje</a>
-    </div>
+    <nav class="navbar">
+      <img src="img/torch.gif" alt="Baklja" class="logo">
+      <ul class="nav-links">
+        <a href="#pocetak">Početak</a>
+        <a href="#takmicari">Takmičari</a>
+        <a href="#statistika">Statistika</a>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        ☰
+      </div>
+    </nav>
 
-    <div class="video-background">
+    <div id="pocetak" class="video-background">
       <video autoplay loop muted playsinline>
         <source src="img/pozadina.mp4" type="video/mp4">
         Vaš pregledač ne podržava HTML5 video.
@@ -42,7 +42,7 @@
     <h2>Početak Survivora za:</h2>
     <div class="countdown" id="countdown"></div>
 
-    <div class="team-section yellow-team">
+    <div id ="takmicari"class="team-section yellow-team">
       <h2 class="yellow-team-title">Žuti Tim</h2>
       <div class="container">
         <div class="card">
@@ -149,8 +149,8 @@
         </div>
       </div>
     </div>
-
-    <h2>Statistika Takmičara</h2>
+<div class="stat-tabela">
+    <h2 id ="statistika">Statistika Takmičara</h2>
     <table id="statsTable">
       <thead>
         <tr>
@@ -245,7 +245,7 @@
         </tr>
       </tbody>
     </table>
-
+  </div>
     <h2>Live Feed - Survivor Srbija</h2>
     <div
       id="live-feed"

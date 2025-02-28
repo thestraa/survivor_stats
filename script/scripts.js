@@ -1,3 +1,31 @@
+//Navbar
+window.addEventListener("scroll", function () {
+  let navbar = document.querySelector(".navbar");
+  if (window.scrollY > 50) { // Kada skroluju više od 50px
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+function toggleMenu() {
+  document.querySelector(".nav-links").classList.toggle("active");
+}
+document.addEventListener("click", function (event) {
+  const menu = document.querySelector(".menu");
+  const hamburger = document.querySelector(".hamburger");
+
+  // Ako klik nije na meniju ili hamburger ikonici, zatvori meni
+  if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+    menu.classList.remove("active");
+  }
+});
+
+// Zatvaranje menija kada se klikne na link
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", function () {
+    document.querySelector(".nav-links").classList.remove("active");
+  });
+});
 // COUNTDOWN TIMER
 function updateCountdown() {
   const eventDate = new Date("March 4, 2025 20:00:00").getTime();
