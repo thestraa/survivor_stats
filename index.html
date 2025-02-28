@@ -8,12 +8,10 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quicksand:wght@300..700&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
 
     <link rel="stylesheet" href="styles/style.css" />
     <title>Survivor Srbija - Fan Page</title>
@@ -25,6 +23,7 @@
         <a href="#pocetak">Početak</a>
         <a href="#takmicari">Takmičari</a>
         <a href="#statistika">Statistika</a>
+        <a href="#vesti">Vesti</a>
       </ul>
       <div class="hamburger" onclick="toggleMenu()">
         ☰
@@ -42,7 +41,24 @@
       </div>
     </div>
     <h2>Početak Survivora za:</h2>
-    <div class="countdown" id="countdown"></div>
+    <div class="countdown">
+        <div class="countdown-item">
+            <span id="days">00</span>
+            <p>Dana</p>
+        </div>
+        <div class="countdown-item">
+            <span id="hours">00</span>
+            <p>Sati</p>
+        </div>
+        <div class="countdown-item">
+            <span id="minutes">00</span>
+            <p>Minuta</p>
+        </div>
+        <div class="countdown-item">
+            <span id="seconds">00</span>
+            <p>Sekundi</p>
+        </div>
+    </div>
 
     <section class ="takmicari-section">
         <div id ="takmicari"class="team-section yellow-team">
@@ -152,7 +168,7 @@
           </div>
         </div>
       </section>
-      
+
   <div class="table-container">
     <div class="stat-tabela">
         <h2 id ="statistika">Statistika Takmičara</h2>
@@ -252,7 +268,7 @@
         </table>
   </div>
 </div>
-<section class="news-section">
+<section class="news-section" id="vesti">
   <h2>Najnovije vesti</h2>
   <div class="news-container">
       <!-- Glavna vest -->

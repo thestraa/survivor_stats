@@ -26,30 +26,30 @@ document.querySelectorAll(".nav-links a").forEach(link => {
     document.querySelector(".nav-links").classList.remove("active");
   });
 });
-// COUNTDOWN TIMER
+
+//Countdown
 function updateCountdown() {
-  const eventDate = new Date("March 4, 2025 20:00:00").getTime();
+  const targetDate = new Date("2025-03-03T20:00:00").getTime();
   const now = new Date().getTime();
-  const timeLeft = eventDate - now;
+  const timeLeft = targetDate - now;
 
-  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
-    (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+  if (timeLeft > 0) {
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-  document.getElementById(
-    "countdown"
-  ).innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-  if (timeLeft < 0) {
-    document.getElementById("countdown").innerHTML = "Survivor je počeo!";
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+  } else {
+      document.querySelector(".countdown").innerHTML = "<h3>Počeo je Survivor!</h3>";
   }
 }
 
-updateCountdown(); // Pokreni funkciju odmah
-setInterval(updateCountdown, 1000); // Osvježavaj svake sekunde
+setInterval(updateCountdown, 1000);
+updateCountdown();
 
 
 
