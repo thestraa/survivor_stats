@@ -1,3 +1,4 @@
+// COUNTDOWN TIMER
 function updateCountdown() {
   const eventDate = new Date("March 4, 2025 20:00:00").getTime();
   const now = new Date().getTime();
@@ -22,16 +23,7 @@ function updateCountdown() {
 updateCountdown(); // Pokreni funkciju odmah
 setInterval(updateCountdown, 1000); // Osvježavaj svake sekunde
 
-// Slider
 
-let currentIndex = 0;
-function slideImages() {
-  const slides = document.querySelector(".slides");
-  const totalSlides = slides.children.length;
-  currentIndex = (currentIndex + 1) % totalSlides;
-  slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
-setInterval(slideImages, 3000);
 
 // Voting system
 

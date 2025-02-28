@@ -13,14 +13,7 @@ body {
   font-weight: normal;
   font-style: normal;
 }
-h1,
-.custom-font {
-  font-family: "Capture It", sans-serif;
-  font-size: 70px;
-  font-weight: 100;
-  letter-spacing: 5px;
-  margin: 10px 0px;
-}
+/* NAV BAR */
 .navbar {
   display: flex;
   justify-content: center;
@@ -46,6 +39,88 @@ h2 {
   font-family: "Quicksand", sans-serif;
   font-weight: 100;
 }
+h1,
+.custom-font {
+  font-family: "Capture It", sans-serif;
+  font-size: 70px;
+  font-weight: 100;
+  letter-spacing: 5px;
+  margin: 10px 0px;
+}
+/* VIDEO  */
+.video-background {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio (9/16 = 56.25%) */
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3); /* Tamni filter za bolju čitljivost teksta */
+  color: #fff;
+  text-align: center;
+}
+
+.overlay h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.overlay button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 5px;
+}
+/* COUNTDOWN */
+.countdown {
+  font-family: "Orbitron", sans-serif;
+  font-size: 28px;
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #00360c, #ce9e1b);
+  color: black;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  animation: glow 1.5s infinite alternate;
+}
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #62774d;
+  }
+  100% {
+    box-shadow: 0 0 20px #ce9e1b;
+  }
+}
+
+/* TIMOVI */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
 .yellow-team-title {
   position: relative;
   display: inline-block; /* kako bi pseudo-element imao širinu teksta */
@@ -64,6 +139,7 @@ h2 {
   transform: skew(-10deg); /* opcioni efekt nagiba */
 }
 
+
 .green-team-title {
   position: relative;
   display: inline-block; /* kako bi pseudo-element imao širinu teksta */
@@ -81,31 +157,7 @@ h2 {
   z-index: -1; /* da se nalazi ispod teksta */
   transform: skew(-10deg); /* opcioni efekt nagiba */
 }
-.slider {
-  position: relative;
-  width: 100%;
-  max-height: 500px;
-  overflow: hidden;
-}
-.slides {
-  display: flex;
-  width: 100%;
-  transition: transform 1s ease-in-out;
-  white-space: nowrap;
-}
-.slides img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-.container {
-  max-width: 1200px;
-  margin: 20px auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
+
 .card {
   background: rgb(255 255 255 / 4%);
   padding: 15px;
@@ -140,25 +192,7 @@ h4 {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
   border: 2px solid white;
 }
-.countdown {
-  font-family: "Orbitron", sans-serif;
-  font-size: 28px;
-  padding: 10px;
-  border-radius: 10px;
-  background: linear-gradient(45deg, #00360c, #ce9e1b);
-  color: black;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  display: inline-block;
-  animation: glow 1.5s infinite alternate;
-}
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 10px #62774d;
-  }
-  100% {
-    box-shadow: 0 0 20px #ce9e1b;
-  }
-}
+
 .stats-table {
   width: 80%;
   margin: 30px auto;
