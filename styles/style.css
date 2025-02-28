@@ -87,6 +87,7 @@ html {
 
   .hamburger {
     display: block;
+    margin-right: 10px;
   }
   .overlay h1 {
     font-size: 2em;
@@ -176,12 +177,16 @@ h1,
 }
 
 /* TIMOVI */
+.takmicari-section{
+  padding: 50px 0;
+}
 .container {
   max-width: 1200px;
   margin: 20px auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+
 }
 .yellow-team-title {
   position: relative;
