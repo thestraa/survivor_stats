@@ -56,7 +56,7 @@ setInterval(updateCountdown, 1000); // Osvježavaj svake sekunde
 // Voting system
 
 document.addEventListener("DOMContentLoaded", function () {
-  const competitors = ["Takmičar 1", "Takmičar 2"];
+  const competitors = ["Takmičar 1", "Takmičar 2", "Takmičar 3", "Takmičar 4", "Takmičar 5", "Takmičar 6", "Takmičar 7", "Takmičar 8", "Takmičar 9", "Takmičar 10", "Takmičar 11", "Takmičar 12", "Takmičar 13", "Takmičar 14", "Takmičar 15", "Takmičar 16"];
   competitors.forEach((name) => {
     let storedVotes = localStorage.getItem(name);
     if (storedVotes) {

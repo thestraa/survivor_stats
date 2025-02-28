@@ -8,6 +8,8 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quicksand:wght@300..700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
       rel="stylesheet"
@@ -35,8 +37,8 @@
         Vaš pregledač ne podržava HTML5 video.
       </video>
       <div class="overlay">
-        <h1>Dobrodošli u Survivor Srbiju</h1>
-        <button>Glasaj sada</button>
+        <h1>DoBrodošli u Survivor SRBIJA</h1>
+        <button a href="#takmicari">GLASAJ</button>
       </div>
     </div>
     <h2>Početak Survivora za:</h2>
@@ -45,53 +47,53 @@
     <div id ="takmicari"class="team-section yellow-team">
       <h2 class="yellow-team-title">Žuti Tim</h2>
       <div class="container">
-        <div class="card">
+        <div class="card" onclick="vote('Takmičar 1')">
           <img src="img/covek1.png" alt="Takmičar 1" />
           <h3>Ime Prezime</h3>
           <h4>Trener</h4>
-          <p>Pobede: 75%</p>
+          <p>Glasovi: <span id="votes-Takmičar 1">0</span></p>
         </div>
-        <div class="card">
+        <div class="card" onclick="vote('Takmičar 2')">
           <img src="img/covek1.png" alt="Takmičar 2" />
           <h3>Ime Prezime</h3>
           <h4>Trener</h4>
-          <p>Pobede: 60%</p>
+          <p>Glasovi: <span id="votes-Takmičar 2">0</span></p>
         </div>
-        <div class="card">
+        <div class="card" onclick="vote('Takmičar 3')">
           <img src="img/covek1.png" alt="Takmičar 3" />
           <h3>Ime Prezime</h3>
           <h4>Trener</h4>
-          <p>Pobede: 50%</p>
+          <p>Glasovi: <span id="votes-Takmičar 3">0</span></p>
         </div>
-        <div class="card">
+        <div class="card" onclick="vote('Takmičar 4')">
           <img src="img/covek1.png" alt="Takmičar 4" />
           <h3>Ime Prezime</h3>
           <h4>Trener</h4>
-          <p>Pobede: 65%</p>
+          <p>Glasovi: <span id="votes-Takmičar 4">0</span></p>
         </div>
-        <div class="card">
+        <div class="card" onclick="vote('Takmičar 6')">
           <img src="img/covek1.png" alt="Takmičar 5" />
           <h3>Ime Prezime</h3>
           <h4>Trener</h4>
-          <p>Pobede: 55%</p>
+          <p>Glasovi: <span id="votes-Takmičar 5">0</span></p>
         </div>
-        <div class="card">
+        <div class="card" onclick="vote('Takmičar 6')">
           <img src="img/covek1.png" alt="Takmičar 5" />
           <h3>Ime Prezime</h3>
           <h4>Trener</h4>
-          <p>Pobede: 55%</p>
+          <p>Glasovi: <span id="votes-Takmičar 6">0</span></p>
         </div>
-        <div class="card">
+        <div class="card" onclick="vote('Takmičar 7')">
           <img src="img/covek1.png" alt="Takmičar 5" />
           <h3>Ime Prezime</h3>
           <h4>Trener</h4>
-          <p>Pobede: 55%</p>
+          <p>Glasovi: <span id="votes-Takmičar 7">0</span></p>
         </div>
-        <div class="card">
+        <div class="card" onclick="vote('Takmičar 8')">
           <img src="img/covek1.png" alt="Takmičar 5" />
           <h3>Ime Prezime</h3>
           <h4>Trener</h4>
-          <p>Pobede: 55%</p>
+          <p>Glasovi: <span id="votes-Takmičar 8">0</span></p>
         </div>
       </div>
     </div>
@@ -99,153 +101,203 @@
     <div class="team-section green-team">
       <h2 class="green-team-title">Zeleni Tim</h2>
       <div class="container" id="voting-container">
-        <div class="card">
+        <div class="card" onclick="vote('Takmičar 9')">
           <img src="img/covek1.png" alt="Takmičar 5" />
           <h3>Ime Prezime</h3>
           <h4>Trener</h4>
-          <p>Pobede: 70%</p>
+          <p>Glasovi: <span id="votes-Takmičar 9">0</span></p>
         </div>
-        <div class="card">
+        <div class="card" onclick="vote('Takmičar 10')">
           <img src="img/covek1.png" alt="Takmičar 5" />
           <h3>Ime Prezime</h3>
           <h4>Trener</h4>
-          <p>Pobede: 68%</p>
+          <p>Glasovi: <span id="votes-Takmičar 10">0</span></p>
         </div>
-        <div class="card">
+        <div class="card" onclick="vote('Takmičar 11')">
           <img src="img/covek1.png" alt="Takmičar 5" />
           <h3>Ime Prezime</h3>
           <h4>Trener</h4>
-          <p>Pobede: 45%</p>
+          <  <p>Glasovi: <span id="votes-Takmičar 11">0</span></p>
         </div>
-        <div class="card">
+        <div class="card" onclick="vote('Takmičar 12')">
           <img src="img/covek1.png" alt="Takmičar 5" />
           <h3>Ime Prezime</h3>
           <h4>Trener</h4>
-          <p>Pobede: 58%</p>
+          <p>Glasovi: <span id="votes-Takmičar 12">0</span></p>
         </div>
-        <div class="card">
+        <div class="card" onclick="vote('Takmičar 13')">
           <img src="img/covek1.png" alt="Takmičar 5" />
           <h3>Ime Prezime</h3>
           <h4>Trener</h4>
-          <p>Pobede: 62%</p>
+          <p>Glasovi: <span id="votes-Takmičar 13">0</span></p>
         </div>
-        <div class="card">
+        <div class="card" onclick="vote('Takmičar 14')">
           <img src="img/covek1.png" alt="Takmičar 5" />
           <h3>Ime Prezime</h3>
           <h4>Trener</h4>
-          <p>Pobede: 62%</p>
+          <p>Glasovi: <span id="votes-Takmičar 14">0</span></p>
         </div>
-        <div class="card">
+        <div class="card" onclick="vote('Takmičar 15')">
           <img src="img/covek1.png" alt="Takmičar 5" />
           <h3>Ime Prezime</h3>
           <h4>Trener</h4>
-          <p>Pobede: 62%</p>
+          <p>Glasovi: <span id="votes-Takmičar 15">0</span></p>
         </div>
-        <div class="card" onclick="vote('Takmičar 1')">
+        <div class="card" onclick="vote('Takmičar 16')">
           <img src="img/covek1.png" alt="Takmičar 5" />
           <h3>Ime Prezime</h3>
           <h4>Trener</h4>
-          <p>Glasovi: <span id="votes-Takmičar 1">0</span></p>
+          <p>Glasovi: <span id="votes-Takmičar 16">0</span></p>
         </div>
       </div>
     </div>
-<div class="stat-tabela">
-    <h2 id ="statistika">Statistika Takmičara</h2>
-    <table id="statsTable">
-      <thead>
-        <tr>
-          <th onclick="sortTable(0)">Ime</th>
-          <th onclick="sortTable(1)">Pleme</th>
-          <th onclick="sortTable(2)">Ukupno Igra</th>
-          <th onclick="sortTable(3)">Pobede</th>
-          <th onclick="sortTable(4)">Porazi</th>
-          <th onclick="sortTable(5)">Poslednja Igra (Rezultat)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="yellow">
-          <td>Marko</td>
-          <td>Žuti</td>
-          <td>12</td>
-          <td>7</td>
-          <td>5</td>
-          <td>5:3</td>
-        </tr>
-        <tr class="green">
-          <td>Jovan</td>
-          <td>Zeleni</td>
-          <td>12</td>
-          <td>5</td>
-          <td>7</td>
-          <td>3:5</td>
-        </tr>
-        <tr class="yellow">
-          <td>Petar</td>
-          <td>Žuti</td>
-          <td>14</td>
-          <td>8</td>
-          <td>6</td>
-          <td>6:4</td>
-        </tr>
-        <tr class="green">
-          <td>Nemanja</td>
-          <td>Zeleni</td>
-          <td>10</td>
-          <td>4</td>
-          <td>6</td>
-          <td>2:4</td>
-        </tr>
-        <tr class="yellow">
-          <td>Vladimir</td>
-          <td>Žuti</td>
-          <td>11</td>
-          <td>6</td>
-          <td>5</td>
-          <td>4:2</td>
-        </tr>
-        <tr class="green">
-          <td>Stefan</td>
-          <td>Zeleni</td>
-          <td>9</td>
-          <td>3</td>
-          <td>6</td>
-          <td>1:5</td>
-        </tr>
-        <tr class="yellow">
-          <td>Igor</td>
-          <td>Žuti</td>
-          <td>13</td>
-          <td>9</td>
-          <td>4</td>
-          <td>7:5</td>
-        </tr>
-        <tr class="green">
-          <td>Darko</td>
-          <td>Zeleni</td>
-          <td>15</td>
-          <td>7</td>
-          <td>8</td>
-          <td>6:6</td>
-        </tr>
-        <tr class="yellow">
-          <td>Nemanja</td>
-          <td>Žuti</td>
-          <td>12</td>
-          <td>5</td>
-          <td>7</td>
-          <td>5:6</td>
-        </tr>
-        <tr class="green">
-          <td>Dejan</td>
-          <td>Zeleni</td>
-          <td>14</td>
-          <td>8</td>
-          <td>6</td>
-          <td>7:4</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="table-container">
+    <div class="stat-tabela">
+        <h2 id ="statistika">Statistika Takmičara</h2>
+        <table id="statsTable">
+          <thead>
+            <tr>
+              <th onclick="sortTable(0)">Ime</th>
+              <th onclick="sortTable(1)">Pleme</th>
+              <th onclick="sortTable(2)">Ukupno Igra</th>
+              <th onclick="sortTable(3)">Pobede</th>
+              <th onclick="sortTable(4)">Porazi</th>
+              <th onclick="sortTable(5)">Poslednja Igra (Rezultat)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="yellow">
+              <td>Marko</td>
+              <td>Žuti</td>
+              <td>12</td>
+              <td>7</td>
+              <td>5</td>
+              <td>5:3</td>
+            </tr>
+            <tr class="green">
+              <td>Jovan</td>
+              <td>Zeleni</td>
+              <td>12</td>
+              <td>5</td>
+              <td>7</td>
+              <td>3:5</td>
+            </tr>
+            <tr class="yellow">
+              <td>Petar</td>
+              <td>Žuti</td>
+              <td>14</td>
+              <td>8</td>
+              <td>6</td>
+              <td>6:4</td>
+            </tr>
+            <tr class="green">
+              <td>Nemanja</td>
+              <td>Zeleni</td>
+              <td>10</td>
+              <td>4</td>
+              <td>6</td>
+              <td>2:4</td>
+            </tr>
+            <tr class="yellow">
+              <td>Vladimir</td>
+              <td>Žuti</td>
+              <td>11</td>
+              <td>6</td>
+              <td>5</td>
+              <td>4:2</td>
+            </tr>
+            <tr class="green">
+              <td>Stefan</td>
+              <td>Zeleni</td>
+              <td>9</td>
+              <td>3</td>
+              <td>6</td>
+              <td>1:5</td>
+            </tr>
+            <tr class="yellow">
+              <td>Igor</td>
+              <td>Žuti</td>
+              <td>13</td>
+              <td>9</td>
+              <td>4</td>
+              <td>7:5</td>
+            </tr>
+            <tr class="green">
+              <td>Darko</td>
+              <td>Zeleni</td>
+              <td>15</td>
+              <td>7</td>
+              <td>8</td>
+              <td>6:6</td>
+            </tr>
+            <tr class="yellow">
+              <td>Nemanja</td>
+              <td>Žuti</td>
+              <td>12</td>
+              <td>5</td>
+              <td>7</td>
+              <td>5:6</td>
+            </tr>
+            <tr class="green">
+              <td>Dejan</td>
+              <td>Zeleni</td>
+              <td>14</td>
+              <td>8</td>
+              <td>6</td>
+              <td>7:4</td>
+            </tr>
+          </tbody>
+        </table>
   </div>
+</div>
+<section class="news-section">
+  <h2>Najnovije vesti</h2>
+  <div class="news-container">
+      <!-- Glavna vest -->
+      <div class="main-news">
+          <img src="vesti/img/vest1.webp" alt="Glavna vest">
+          <div class="main-news-content">
+              <h3>🔥 Šokantni preokreti u sinoćnjem plemenskom savetu!</h3>
+              <p>Drama, suze i neočekivani obrti obeležili su veče koje će svi pamtiti...</p>
+              <a href="#" class="read-more">Pročitaj više</a>
+          </div>
+      </div>
+
+      <!-- Sekundarne vesti -->
+      <div class="secondary-news">
+          <div class="news-card">
+              <img src="vesti/img/vest2.jpeg" alt="Vest 1">
+              <div class="news-content">
+                  <h3>Ko je novi vođa plemena?</h3>
+                  <p>Pleme je izabralo novog lidera, ali ne bez sukoba...</p>
+                  <a href="#" class="read-more">Pročitaj više</a>
+              </div>
+          </div>
+
+          <div class="news-card">
+              <img src="vesti/img/vest3.jpg" alt="Vest 2">
+              <div class="news-content">
+                  <h3>Izazov koji je promenio tok igre!</h3>
+                  <p>Takmičari su ostali u šoku kada su čuli nova pravila...</p>
+                  <a href="#" class="read-more">Pročitaj više</a>
+              </div>
+          </div>
+
+          <div class="news-card">
+              <img src="vesti/img/vest4.jpg" alt="Vest 3">
+              <div class="news-content">
+                  <h3>Ko je sledeći na udaru?</h3>
+                  <p>Glasine kruže o tome ko bi mogao napustiti takmičenje...</p>
+                  <a href="#" class="read-more">Pročitaj više</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+  <section class="feed">
     <h2>Live Feed - Survivor Srbija</h2>
     <div
       id="live-feed"
@@ -259,21 +311,30 @@
         text-align: left;
       "
     >
-      <p>
-        Pogledajte najnovije objave na
-        <a
-          href="https://x.com/hashtag/SurvivorSrbija"
-          target="_blank"
-          style="color: #1da1f2; font-weight: bold; text-decoration: none"
-          >X (#SurvivorSrbija)</a
-        >
-      </p>
-      <script
-        async
-        src="https://platform.x.com/widgets.js"
-        charset="utf-8"
-      ></script>
+      <script type="text/javascript" src="https://www.juicer.io/embed/survivorsrbija/embed-code.js" async defer></script>
     </div>
+  </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+          <div class="footer-logo">
+              <img src="img/torch.gif" alt="Survivor Logo">
+          </div>
+          <div class="footer-links">
+              <a href="#">Početna</a>
+              <a href="#takmicari">Takmičari</a>
+              <a href="#glasanje">Glasanje</a>
+              <a href="#statistika">Statistika</a>
+          </div>
+          <div class="footer-social">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+          <p class="footer-text">Ovaj sajt je fan-projekat napravljen radi zabave i informisanja. Nemamo prava na Survivor brend, slike ili video materijale koji se ovde koriste. Ako ste vlasnik nekog materijala i želite njegovo uklanjanje, kontaktirajte nas.</p>
+      </div>
+  </footer>
 
     <script src="script/scripts.js"></script>
   </body>

@@ -90,7 +90,15 @@ html {
   }
   .overlay h1 {
     font-size: 2em;
-}
+  }
+  .table-container {
+    overflow-x: auto; /* Omogućava horizontalni scroll */
+    width: 100%;
+  }
+
+  .stat-tabela {
+    width: 900px; /* Sprečava da se tabela suviše smanji */
+  }
 }
 
 h2 {
@@ -216,10 +224,16 @@ h1,
   background: rgb(255 255 255 / 4%);
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
   color: black;
   transition: transform 0.3s, box-shadow 0.3s;
   text-align: center;
+}
+.green-team .card{
+  box-shadow: 0 4px 6px rgb(0 255 67 / 20%);
+}
+.yellow-team .card{
+  box-shadow: 0 4px 6px rgba(203, 206, 31, 0.2);
 }
 h3,
 p {
@@ -235,7 +249,7 @@ h4 {
 }
 .card:hover {
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 12px rgba(248, 246, 246, 0.3);
 }
 .card img {
   width: 80px;
@@ -266,10 +280,25 @@ h4 {
 }
 
 /* TABELA */
-.stat-tabela {
-  overflow-x: auto;
-  max-width: 100%;
+.table-container {
+  display: flex;
+  justify-content: center; /* Centriranje */
+  width: 100%;
+  background-color: #222;
+  padding: 50px 0;
 }
+.stat-tabela {
+  width: 80%; /* Možeš smanjiti ako treba */
+  max-width: 1200px; /* Da ne ode previše široko */
+  
+}
+.stat-tabela h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #ffc107; /* Zlatno-žuta nijansa */
+}
+
 table {
   width: 100%;
   max-width: 100%;
@@ -306,4 +335,209 @@ tr:hover {
 .yellow {
   background-color: #ce9e1b;
   color: white;
+}
+
+/* VESTI */
+
+.news-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #1d2119;
+  color: white;
+}
+
+.news-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: #ffc107;
+}
+
+/* Kontejner za vesti */
+.news-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Glavna vest - veća i dominantna */
+.main-news {
+  flex: 2;
+  background: #272727;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.main-news img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out;
+}
+
+.main-news-content {
+  padding: 20px;
+}
+
+.main-news-content h3 {
+  font-size: 24px;
+  color: #ffc107;
+}
+
+.main-news-content p {
+  font-size: 16px;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: #ffc107;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.read-more:hover {
+  color: #ffeb3b;
+  text-decoration: underline;
+}
+
+/* Sekundarne vesti */
+.secondary-news {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.news-card {
+  background: #272727;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.news-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out;
+}
+
+.news-content {
+  padding: 10px;
+}
+
+.news-content h3 {
+  font-size: 16px;
+  color: #ffc107;
+}
+
+.news-content p {
+  font-size: 12px;
+  color: #ccc;
+}
+.main-news:hover img,
+.news-card:hover img {
+    transform: scale(1.1); /* Blago uvećavanje */
+}
+/* Responzivnost */
+@media screen and (max-width: 768px) {
+  .news-container {
+      flex-direction: column;
+  }
+
+  .main-news {
+      flex: none;
+      width: 100%;
+  }
+
+  .secondary-news {
+      flex: none;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .news-card {
+      width: 90%;
+  }
+}
+
+/* FEED */
+.feed{
+  background: #222;
+  padding: 50px 0;
+}
+/* FOOTER */
+
+.footer {
+  background: #1d2119;
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #ffc107;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.footer-social a {
+  color: white;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  color: #ffc107;
+}
+
+.footer-text {
+  font-size: 12px;
+  opacity: 0.7;
 }
