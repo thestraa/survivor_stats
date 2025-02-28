@@ -183,7 +183,14 @@ button:hover {
   border-radius: 5px;
 }
 
-
+/* COUNTDOWN */
+@media screen and (max-width: 480px) {
+  .countdown {
+    font-size: 18px;
+    padding: 8px;
+    max-width: 90%;
+  }
+}
 .countdown {
   display: flex;
   justify-content: center;
