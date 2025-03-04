@@ -7,10 +7,8 @@ window.addEventListener("scroll", function () {
   let navlinks = document.querySelector(".navlinks");
   if (window.scrollY > 50) {
       navbar.classList.add("scrolled");
-      navlinks.classList.add("scrolledx");
   } else {
       navbar.classList.remove("scrolled");
-      navlinks.classList.remove("scrolledx");
   }
 });
 

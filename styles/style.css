@@ -92,6 +92,7 @@ button:hover {
   font-size: 18px;
   transition: color 0.3s ease;
 }
+
 .nav-links a:hover {
   color: #ffcc00;
 }
