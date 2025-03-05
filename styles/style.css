@@ -619,3 +619,48 @@ td {
   font-size: 12px;
   opacity: 0.7;
 }
+
+
+
+/* ADMIN PANEL */
+.modal {
+  display: none;  /* Početno stanje je sakriven */
+  position: fixed;
+  z-index: 1;  /* Osigurajte da modal bude ispred drugih elemenata */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);  /* Poluproziran pozadinski sloj */
+}
+.modal-content {
+  background-color: rgb(0 255 67 / 20%);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 80px
+}
+
+/* Dodajte animaciju u klasu updated */
+@keyframes blink {
+  0% { background-color: yellow; }
+  50% { background-color: transparent; }
+  100% { background-color: yellow; }
+}
+
+.updated {
+  animation: blink 5s ease-in-out infinite;
+}
+#pobedeGrafikon {
+  max-width: 600px;
+  margin: 30px auto;
+  display: block;
+}
