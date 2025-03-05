@@ -137,7 +137,30 @@ button:hover {
   }
   .grafikon{
     padding: 10px!important;
+
+    justify-self: center;
+    margin-bottom: 70px;
   }
+  #pobedeGrafikon{
+    height: 200px;
+    width: 200px;
+  }
+  .card{
+    margin: auto 25px;
+  }
+  .stat-tabela th{
+    font-size: 8px;
+    padding: 5px;
+  }
+  .stat-tabela td{
+    font-size: 10px;
+    padding: 5px;
+  }
+  .footer-text {
+    font-size: 7px;
+  }
+
+
 }
 @media screen and (max-width: 768px) {
   .countdown {
