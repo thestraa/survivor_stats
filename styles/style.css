@@ -198,6 +198,12 @@ button:hover {
   border: none;
   border-radius: 5px;
 }
+.overlay button a{
+    text-decoration: none;  /* Uklanja podvučenu liniju */
+    color: inherit;         /* Nasleđuje boju teksta od roditelja (dugme) */
+    display: block;         /* Da link zauzima celu širinu dugmeta */
+
+}
 
 /* COUNTDOWN */
 @media screen and (max-width: 480px) {
@@ -620,8 +626,52 @@ td {
   opacity: 0.7;
 }
 
+.grafikon {
+  background-color: #222;
+  padding: 50px;
+}
+.grafikon h2{
+  color: #ffc107;
+}
+.team-section{
+  margin: 50px auto;
+}
+.glasaj{
+  max-width: 1060px;
+  margin: 40px auto;
+  justify-items: center;
+}
+#votingBody .card {
+  height: 150px;
+    width: 150px;
+    align-content: center;
+    border-radius: 50%;
+}
+#votingBody .card img{
+  width: 60px;
+  height: 60px;
+}
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Zelena boja */
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+  visibility: hidden;
+}
 
-
+.notification.show {
+  opacity: 1;
+  visibility: visible;
+}
 /* ADMIN PANEL */
 .modal {
   display: none;  /* Početno stanje je sakriven */

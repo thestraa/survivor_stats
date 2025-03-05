@@ -129,38 +129,58 @@ document.addEventListener("DOMContentLoaded", function() {
       .then(data => {
           const containerZeleni = document.getElementById("zeleniTim");
           const containerZuti = document.getElementById("zutiTim");
+         
 
           // Očisti postojeći sadržaj
           containerZeleni.innerHTML = "";
           containerZuti.innerHTML = "";
 
-          // Proveri da li postoje timovi
+
           if (Array.isArray(data.zeleniTim)) {
-              data.zeleniTim.forEach(takmicar => {
-                  const div = document.createElement("div");
-                  div.classList.add("takmicar", "card");
-                  div.innerHTML = `
-                      <img src="${takmicar.slika}" alt="${takmicar.ime} ${takmicar.prezime}">
-                      <h3>${takmicar.ime} ${takmicar.prezime}</h3>
-                      <p>Uspešnost u igrama: ${(takmicar.pobede / takmicar.ukupne_igre * 100).toFixed(2)}%</p>
-                      <p>Pobede: ${takmicar.pobede}</p>
-                      <p>Gadjanja: ${takmicar.ukupne_igre}</p>
-                  `;
-                  containerZeleni.appendChild(div);
-              });
-          }
+            data.zeleniTim.forEach(takmicar => {
+                const div = document.createElement("div");
+                const uspesnost = takmicar.pobede / takmicar.ukupne_igre * 100;
+        
+                div.classList.add("takmicar", "card");
+                div.innerHTML = `
+                    <img src="${takmicar.slika}" alt="${takmicar.ime} ${takmicar.prezime}">
+                    <h3>${takmicar.ime} ${takmicar.prezime}</h3>
+                    <p>Uspešnost u igrama:</p> 
+                    <p class="uspesnost">${(uspesnost).toFixed(2)}%</p>
+                `;
+        
+                // Selektujte p element sa klasom 'uspesnost' i menjajte boju
+                const uspesnostElement = div.querySelector('.uspesnost');
+                if (uspesnost > 50) {
+                    uspesnostElement.style.color = "green";
+                } else {
+                    uspesnostElement.style.color = "red";
+                }
+        
+                containerZeleni.appendChild(div);
+            });
+        }
 
           if (Array.isArray(data.zutiTim)) {
               data.zutiTim.forEach(takmicar => {
                   const div = document.createElement("div");
+                  const uspesnost = takmicar.pobede / takmicar.ukupne_igre * 100;
+
                   div.classList.add("takmicar", "card");
                   div.innerHTML = `
                       <img src="${takmicar.slika}" alt="${takmicar.ime} ${takmicar.prezime}">
                       <h3>${takmicar.ime} ${takmicar.prezime}</h3>
-                      <p>Pobede: ${takmicar.pobede}</p>
-                      <p>Uspešnost u igrama: ${(takmicar.pobede / takmicar.ukupne_igre * 100).toFixed(2)}%</p>
-                      <p>Gadjanja: ${takmicar.ukupne_igre}</p>
+                        <p>Uspešnost u igrama:</p> 
+                      <p class="uspesnost">${(uspesnost).toFixed(2)}%</p>
                   `;
+
+                  // Selektujte p element sa klasom 'uspesnost' i menjajte boju
+                  const uspesnostElement = div.querySelector('.uspesnost');
+                  if (uspesnost > 50) {
+                      uspesnostElement.style.color = "green";
+                  } else {
+                      uspesnostElement.style.color = "red";
+                  }
                   containerZuti.appendChild(div);
               });
           }
@@ -210,4 +230,3 @@ const pobedeZeleni = 0;  // Broj pobeda zelenih
 
 // Prikazivanje grafikona sa brojem pobeda
 prikaziGrafikon(pobedeZuti, pobedeZeleni);
-

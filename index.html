@@ -16,7 +16,7 @@
 
 
     <link rel="stylesheet" href="styles/style.css" />
-    <title>Survivor Srbija - Fan Page</title>
+    <title>Survivor Srbija | Survivor Hrvatska - Statistika 2025</title>
   </head>
   <body>
 
@@ -24,9 +24,9 @@
         <div class="logo">Survivor 2025</div>
         <ul class="nav-links">
             <li><a href="#">Početna</a></li>
-            <li><a href="#takmicari">Takmičari</a></li>
-            <li><a href="#vesti">Vesti</a></li>
-            <li><a href="#">Glasanje</a></li>
+            <li><a href="#zeleniTim">Takmičari</a></li>
+            <li><a href="#statistika">Vesti</a></li>
+            <li><a href="#glasanje">Glasanje</a></li>
         </ul>
         <div class="hamburger" onclick="toggleMenu()">
             <span></span>
@@ -41,8 +41,8 @@
         Vaš pregledač ne podržava HTML5 video.
       </video>
       <div class="overlay">
-        <h1>DoBrodošli u Survivor SRBIJA</h1>
-        <button a href="#takmicari">GLASAJ</button>
+        <h1>DoBrodošli u Survivor 2025</h1>
+        <button><a href="#glasanje">GLASAJ</a></button>
       </div>
     </div>
     <!-- <h2>Početak Survivora za:</h2>
@@ -131,7 +131,7 @@
       </div>
       </section>
 
-  <div class="table-container">
+  <!-- <div class="table-container">
     <div class="stat-tabela">
         <h2 id ="statistika">Statistika Takmičara</h2>
         <table id="statsTable">
@@ -229,11 +229,44 @@
           </tbody>
         </table>
   </div>
+</div> -->
+
+<div class="table-container">
+  <div class="stat-tabela">
+      <h2 id="statistika">Statistika Takmičara</h2>
+      <table id="statsTable">
+          <thead>
+              <tr>
+                  <th onclick="sortTable(0)">Ime</th>
+                  <th onclick="sortTable(1)">Pleme</th>
+                  <th onclick="sortTable(2)">Ukupno Igara</th>
+                  <th onclick="sortTable(3)">Pobede</th>
+                  <th onclick="sortTable(4)">Porazi</th>
+                  <th onclick="sortTable(5)">Poslednja Igra (Rezultat)</th>
+              </tr>
+          </thead>
+          <tbody id="statsBody">
+              <!-- Dinamički podaci iz baze -->
+          </tbody>
+      </table>
+  </div>
 </div>
 
+
+<div id="notification" class="notification"></div>
+<div id ="glasanje" class="team-section">
+  <h2>Glasajte za svog favorita!</h2>
+    <div id="votingBody" class="takmicari container glasaj"></div>
+</div>
+
+
 <!-- Grafikon plemena -->
+ <div class ="grafikon">
 <h2>Pobede plemena</h2>
 <canvas id="pobedeGrafikon" width="400" height="400"></canvas>
+<p>Od ukupno odigranih 3 igara u Survivor 2025, Žuto pleme vodi sa 3:0</p>
+</div>
+
 
 <!-- <section class="news-section" id="vesti">
   <h2>Najnovije vesti</h2>
@@ -317,11 +350,12 @@
               <a href="#"><i class="fab fa-instagram"></i></a>
               <a href="#"><i class="fab fa-youtube"></i></a>
           </div>
-          <p class="footer-text">Ova web stranica nije zvanično povezana sa Survivor Srbija. Sav sadržaj je kreiran isključivo u svrhu zabave, bez ikakvih prava na materijale prikazane na sajtu.</p>
+          <p class="footer-text">Ova web stranica nije zvanično povezana sa Survivor Srbija / Survivor Hrvatska. Sav sadržaj je kreiran isključivo u svrhu zabave, bez ikakvih prava na materijale prikazane na sajtu.</p>
       </div>
   </footer>
 
+    <script src="script/voting.js"></script>
     <script src="script/scripts.js"></script>
-
+    <script src="script/statistika.js"></script>
   </body>
 </html>
