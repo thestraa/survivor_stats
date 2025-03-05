@@ -68,8 +68,8 @@ window.addEventListener("scroll", function () {
 // }
 
 //Sorting table
-function sortTable(n) {
-  var table,
+function sortTable(n, defaultDir = null) {
+  let table,
     rows,
     switching,
     i,
@@ -80,7 +80,10 @@ function sortTable(n) {
     switchcount = 0;
   table = document.getElementById("statsTable");
   switching = true;
-  dir = "asc";
+  
+  // Ako je definisan defaultDir, koristi njega, inače podrazumevano "asc"
+  dir = defaultDir ? defaultDir : "asc";
+
   while (switching) {
     switching = false;
     rows = table.rows;
@@ -88,6 +91,7 @@ function sortTable(n) {
       shouldSwitch = false;
       x = rows[i].getElementsByTagName("TD")[n];
       y = rows[i + 1].getElementsByTagName("TD")[n];
+
       if (dir == "asc") {
         if (!isNaN(parseInt(x.innerHTML)) && !isNaN(parseInt(y.innerHTML))) {
           if (parseInt(x.innerHTML) > parseInt(y.innerHTML)) {
@@ -122,7 +126,9 @@ function sortTable(n) {
     }
   }
 }
-
+window.onload = function() {
+  sortTable(3, "desc"); // Sortira tabelu prema broju pobeda (četvrta kolona, indeks 3)
+};
 document.addEventListener("DOMContentLoaded", function() {
   fetch("http://localhost:3000/api/takmicari")
       .then(response => response.json())

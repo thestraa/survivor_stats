@@ -68,6 +68,7 @@ button:hover {
 .navbar.scrolled {
   background: rgba(0, 0, 0, 0.8);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  height: 20px;
 }
 .logo {
   color: white;
@@ -126,12 +127,16 @@ button:hover {
     background: rgba(0, 0, 0, 0.8); /* Isti bg kada se skroluje */
     transition: background 0.3s ease-in-out;
     z-index: 1000;
+    top: 52px;
 }
   .nav-links.active {
       display: flex;
   }
   .hamburger {
       display: flex;
+  }
+  .grafikon{
+    padding: 10px!important;
   }
 }
 @media screen and (max-width: 768px) {
