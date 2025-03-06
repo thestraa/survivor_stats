@@ -27,13 +27,12 @@ function ucitajTakmicare() {
                         <td>${t.prezime}</td>
                         <td>${t.pobede}</td>
                         <td>${t.ukupne_igre}</td>
-                        <td>${t.slika}</td>
                         <td>${t.tim || "Nema tima"}</td> <!-- Prikazujemo tim -->
                         <td>
                             <button id="updateButton-${t.id}">
                                 ✏ Ažuriraj
                             </button>
-                            <button onclick="obrisiTakmicara(${t.id})">🗑 Obrisi</button>
+                            <button class="deltebtn" onclick="obrisiTakmicara(${t.id})">🗑 Obrisi</button>
                         </td>
                     `;
                     listaTakmicara.appendChild(row);
@@ -41,7 +40,7 @@ function ucitajTakmicare() {
                     // Dodaj event listener za ažuriranje
                     const updateButton = document.getElementById(`updateButton-${t.id}`);
                     updateButton.addEventListener("click", function() {
-                        otvoriModal(t.id, t.ime, t.prezime, t.pobede, t.ukupne_igre, t.slika, t.tim);
+                        otvoriModal(t.id, t.ime, t.prezime, t.pobede, t.ukupne_igre, t.tim);
                     });
                 });
             } else {
@@ -59,7 +58,6 @@ document.getElementById("dodajTakmicaraForm").addEventListener("submit", functio
     const prezime = document.getElementById("prezime").value;
     const pobede = document.getElementById("pobede").value || 0;
     const ukupne_igre = document.getElementById("ukupne_igre").value || 0;
-    const slika = document.getElementById("slika").value;
     const tim = document.getElementById("tim").value;
    
     const takmicar = {
@@ -67,7 +65,6 @@ document.getElementById("dodajTakmicaraForm").addEventListener("submit", functio
         prezime,
         pobede,
         ukupne_igre,
-        slika,
         tim // Dodajemo tim u telo zahteva
     };
     fetch("http://localhost:3000/api/takmicari", {
@@ -80,7 +77,6 @@ document.getElementById("dodajTakmicaraForm").addEventListener("submit", functio
             prezime: prezime,
             pobede: pobede,
             ukupne_igre: ukupne_igre,
-            slika: slika,
             tim: tim
         })
     })
@@ -108,13 +104,12 @@ function obrisiTakmicara(id) {
 }
 
 // Funkcija za otvaranje modala
-function otvoriModal(id, ime, prezime, pobede, ukupne_igre, slika, tim) {
+function otvoriModal(id, ime, prezime, pobede, ukupne_igre, tim) {
     document.getElementById("edit-id").value = id;
     document.getElementById("edit-ime").value = ime;
     document.getElementById("edit-prezime").value = prezime;
     document.getElementById("edit-pobede").value = pobede;
     document.getElementById("edit-ukupne-igre").value = ukupne_igre;
-    document.getElementById("edit-slika").value = slika;
     document.getElementById("edit-tim").value = tim;
     document.getElementById("modal").style.display = "block";
 }
@@ -130,13 +125,12 @@ function sacuvajIzmene() {
     const prezime = document.getElementById("edit-prezime").value;
     const pobede = document.getElementById("edit-pobede").value;
     const ukupne_igre = document.getElementById("edit-ukupne-igre").value;
-    const slika = document.getElementById("edit-slika").value;
     const tim = document.getElementById("edit-tim").value;
 
     fetch(`${API_URL}/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ pobede, ukupne_igre, slika, tim })
+        body: JSON.stringify({ pobede, ukupne_igre, tim })
     })
     .then(() => {
         // Dodajemo klasu 'updated' na red koji je ažuriran

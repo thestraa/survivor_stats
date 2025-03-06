@@ -15,7 +15,6 @@
         <input type="text" id="prezime" placeholder="Prezime" required>
         <input type="number" id="pobede" placeholder="Pobede" value="0">
         <input type="number" id="ukupne_igre" placeholder="Ukupne igre" value="0">
-        <input type="text" id="slika" placeholder="Slika" required>
         <select id="tim" required>
             <option value="zeleniTim">Zeleni Tim</option>
             <option value="zutiTim">Žuti Tim</option>
@@ -24,7 +23,7 @@
     </form>
 
     <!-- Tabela sa takmičarima -->
-    <table>
+    <table class="admin-tabela">
         <thead>
             <tr>
                 <th>ID</th>
@@ -32,7 +31,6 @@
                 <th>Prezime</th>
                 <th>Pobede</th>
                 <th>Ukupne Igre</th>
-                <th>Slika</th>
                 <th>Tim</th>
                 <th>Akcije</th>
             </tr>
@@ -52,7 +50,6 @@
             <input type="text" id="edit-prezime" placeholder="Prezime" required>
             <input type="number" id="edit-pobede" placeholder="Pobede">
             <input type="number" id="edit-ukupne-igre" placeholder="Ukupne igre">
-            <input type="text" id="edit-slika" placeholder="Slika">
             <select id="edit-tim" required>
                 <option value="zeleniTim">Zeleni Tim</option>
                 <option value="zutiTim">Žuti Tim</option>

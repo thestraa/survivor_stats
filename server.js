@@ -23,7 +23,7 @@ app.get("/api/takmicari", (req, res) => {
 
 // Dodavanje podataka
 app.post("/api/takmicari", (req, res) => {
-  const { ime, prezime, pobede, ukupne_igre, slika, tim } = req.body;
+  const { ime, prezime, pobede, ukupne_igre, tim } = req.body;
 
   // Provera da li je tim dodeljen
   if (!tim || (tim !== "zeleniTim" && tim !== "zutiTim")) {
@@ -35,7 +35,6 @@ app.post("/api/takmicari", (req, res) => {
       prezime,
       pobede,
       ukupne_igre,
-      slika,
       tim
   };
 
@@ -52,10 +51,10 @@ app.post("/api/takmicari", (req, res) => {
 // Ažuriranje podataka
 app.put("/api/takmicari/:id", (req, res) => {
   const { id } = req.params;
-  const { pobede, ukupne_igre, slika } = req.body;
+  const { pobede, ukupne_igre } = req.body;
 
-  const query = "UPDATE takmicari SET pobede = ?, ukupne_igre = ?, slika = ? WHERE id = ?";
-  db.query(query, [pobede, ukupne_igre, slika, id], (err, result) => {
+  const query = "UPDATE takmicari SET pobede = ?, ukupne_igre = ? WHERE id = ?";
+  db.query(query, [pobede, ukupne_igre, id], (err, result) => {
     if (err) {
       console.error("Greška pri ažuriranju takmičara:", err);
       return res.status(500).json({ error: "Greška na serveru" });

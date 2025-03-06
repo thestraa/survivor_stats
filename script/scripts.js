@@ -177,7 +177,7 @@ function prikaziGrafikon(pobedeZuti, pobedeZeleni) {
 
 // Manuelno uneseni podaci
 const pobedeZuti = 3;  // Broj pobeda žutih
-const pobedeZeleni = 0;  // Broj pobeda zelenih
+const pobedeZeleni = 1;  // Broj pobeda zelenih
 
 // Prikazivanje grafikona sa brojem pobeda
 prikaziGrafikon(pobedeZuti, pobedeZeleni);

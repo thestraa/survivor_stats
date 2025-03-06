@@ -20,7 +20,7 @@
   </head>
   <body>
 
- <nav class="navbar">
+    <nav class="navbar">
         <div class="logo">Survivor 2025</div>
         <ul class="nav-links">
             <li><a href="#">Početna</a></li>
@@ -34,142 +34,100 @@
             <span></span>
         </div>
     </nav>
-    
+        
+    <!-- Video Intro -->
     <div id="pocetak" class="video-background">
-      <video autoplay loop muted playsinline>
+        <video autoplay loop muted playsinline>
         <source src="img/pozadina.mp4" type="video/mp4">
         Vaš pregledač ne podržava HTML5 video.
-      </video>
-      <div class="overlay">
+        </video>
+        <div class="overlay">
         <h1>DoBrodošli u Survivor 2025</h1>
         <button><a href="#glasanje">GLASAJ</a></button>
-      </div>
+        </div>
     </div>
 
 
+    <!-- Skecija Takmicari-info -->
     <section class ="takmicari-section">
-
-      <div class="team-section green-team">
+        <div class="team-section green-team">
         <h2 class="green-team-title">Zeleno Pleme</h2>
-          <div id="zeleniTim" class="takmicari container">
-              <!-- Dinamički podaci iz baze -->
-          </div>
-      </div>
-      <div class="team-section yellow-team">
+            <div id="zeleniTim" class="takmicari container">
+                <!-- Dinamički podaci iz baze -->
+            </div>
+        </div>
+        <div class="team-section yellow-team">
         <h2 class="yellow-team-title">Žuto Pleme</h2>
-          <div id="zutiTim" class="takmicari container">
-              <!-- Dinamički podaci iz baze -->
-          </div>
-      </div>
-      </section>
-
-<div class="table-container">
-  <div class="stat-tabela">
-      <h2 id="statistika">Statistika Takmičara</h2>
-      <table id="statsTable">
-          <thead>
-              <tr>
-                  <th onclick="sortTable(0)">Ime</th>
-                  <th onclick="sortTable(1)">Pleme</th>
-                  <th onclick="sortTable(2)">Ukupno Igara</th>
-                  <th onclick="sortTable(3)">Pobede</th>
-                  <th onclick="sortTable(4)">Porazi</th>
-                  <th onclick="sortTable(5)">Poslednja Igra (Rezultat)</th>
-              </tr>
-          </thead>
-          <tbody id="statsBody">
-              <!-- Dinamički podaci iz baze -->
-          </tbody>
-      </table>
-  </div>
-</div>
+            <div id="zutiTim" class="takmicari container">
+                <!-- Dinamički podaci iz baze -->
+            </div>
+        </div>
+    </section>
 
 
-<div id="notification" class="notification"></div>
-<div id ="glasanje" class="team-section">
-  <h2>Glasajte za svog favorita!</h2>
-    <div id="votingBody" class="takmicari container glasaj">
-        <!-- Dinamički podaci iz baze -->
+    <!-- Sekcija Statistika-Tabela -->
+    <div class="table-container">
+    <div class="stat-tabela">
+        <h2 id="statistika">Statistika Takmičara</h2>
+        <table id="statsTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Ime</th>
+                    <th onclick="sortTable(1)">Pleme</th>
+                    <th onclick="sortTable(2)">Ukupno Igara</th>
+                    <th onclick="sortTable(3)">Pobede</th>
+                    <th onclick="sortTable(4)">Porazi</th>
+                    <th onclick="sortTable(5)">Poslednja Igra (Rezultat)</th>
+                </tr>
+            </thead>
+            <tbody id="statsBody">
+                <!-- Dinamički podaci iz baze -->
+            </tbody>
+        </table>
     </div>
-</div>
+    </div>
+
+    <!-- Sekcija za glasanje -->
+    <div id="notification" class="notification"></div>
+    <div id ="glasanje" class="team-section">
+    <h2>Glasajte za svog favorita!</h2>
+        <div id="votingBody" class="takmicari container glasaj">
+            <!-- Dinamički podaci iz baze -->
+        </div>
+    </div>
 
 
-<!-- Grafik pobeda -->
- <div class ="grafikon">
-<h2>Pobede plemena</h2>
-<canvas id="pobedeGrafikon" width="400" height="400"></canvas>
-<p>Od ukupno odigranih 3 igara u Survivor 2025, Žuto pleme vodi sa 3:0</p>
-</div>
+    <!-- Sekcija za grafik -->
+    <div class ="grafikon">
+    <h2>Pobede plemena</h2>
+    <canvas id="pobedeGrafikon" width="400" height="400"></canvas>
+    <p>Od ukupno odigranih 3 igara u Survivor 2025, Žuto pleme vodi sa 3:0</p>
+    </div>
 
-
-<!-- <section class="news-section" id="vesti">
-  <h2>Najnovije vesti</h2>
-  <div class="news-container">
-    
-      <div class="main-news">
-          <img src="vesti/img/vest1.webp" alt="Glavna vest">
-          <div class="main-news-content">
-              <h3>🔥 Šokantni preokreti u sinoćnjem plemenskom savetu!</h3>
-              <p>Drama, suze i neočekivani obrti obeležili su veče koje će svi pamtiti...</p>
-              <a href="#" class="read-more">Pročitaj više</a>
-          </div>
-      </div>
-
-   
-      <div class="secondary-news">
-          <div class="news-card">
-              <img src="vesti/img/vest2.jpeg" alt="Vest 1">
-              <div class="news-content">
-                  <h3>Ko je novi vođa plemena?</h3>
-                  <p>Pleme je izabralo novog lidera, ali ne bez sukoba...</p>
-                  <a href="#" class="read-more">Pročitaj više</a>
-              </div>
-          </div>
-
-          <div class="news-card">
-              <img src="vesti/img/vest3.jpg" alt="Vest 2">
-              <div class="news-content">
-                  <h3>Izazov koji je promenio tok igre!</h3>
-                  <p>Takmičari su ostali u šoku kada su čuli nova pravila...</p>
-                  <a href="#" class="read-more">Pročitaj više</a>
-              </div>
-          </div>
-
-          <div class="news-card">
-              <img src="vesti/img/vest4.jpg" alt="Vest 3">
-              <div class="news-content">
-                  <h3>Ko je sledeći na udaru?</h3>
-                  <p>Glasine kruže o tome ko bi mogao napustiti takmičenje...</p>
-                  <a href="#" class="read-more">Pročitaj više</a>
-              </div>
-          </div>
-      </div>
-  </div>
-</section> -->
 
     <footer class="footer">
-      <div class="footer-container">
-          <div class="footer-logo">
-              <img src="img/torch.gif" alt="Survivor Logo">
-          </div>
-          <div class="footer-links">
-              <a href="#">Početak</a>
-              <a href="#zeleniTim">Takmičari</a>
-              <a href="#glasanje">Glasanje</a>
-              <a href="#statistika">Statistika</a>
-          </div>
-          <div class="footer-social">
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
-          </div>
-          <p class="footer-text">Ova web stranica nije zvanično povezana sa Survivor Srbija / Survivor Hrvatska. Sav sadržaj je kreiran isključivo u svrhu zabave, bez ikakvih prava na materijale prikazane na sajtu.</p>
-      </div>
-  </footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="img/torch.gif" alt="Survivor Logo">
+            </div>
+            <div class="footer-links">
+                <a href="#">Početak</a>
+                <a href="#zeleniTim">Takmičari</a>
+                <a href="#glasanje">Glasanje</a>
+                <a href="#statistika">Statistika</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="footer-text">Ova web stranica nije zvanično povezana sa Survivor Srbija / Survivor Hrvatska. Sav sadržaj je kreiran isključivo u svrhu zabave, bez ikakvih prava na materijale prikazane na sajtu.</p>
+        </div>
+    </footer>
 
-    <script src="script/voting.js"></script>
-    <script src="script/scripts.js"></script>
-    <script src="script/statistika.js"></script>
-  </body>
+        <script src="script/voting.js"></script>
+        <script src="script/scripts.js"></script>
+        <script src="script/statistika.js"></script>
+    </body>
 </html>

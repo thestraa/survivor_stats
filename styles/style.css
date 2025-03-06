@@ -701,6 +701,15 @@ td {
   visibility: visible;
 }
 /* ADMIN PANEL */
+#dodajTakmicaraForm{
+  content-visibility: hidden;
+}
+.deltebtn{
+  font-size: 14px;
+    padding: 5px;
+    color: white;
+    background-color: red;
+}
 .modal {
   display: none;  /* Početno stanje je sakriven */
   position: fixed;
@@ -716,7 +725,12 @@ td {
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
+}
+.admin-tabela{
+  margin-top: 50px;
+  justify-self: center;
+  max-width: 60%;
 }
 
 .close {
